@@ -1,0 +1,10 @@
+/* Empty. Add your own CSS if you like */
+.dark-content {
+  color: #fff;
+  background-color: #444;
+}
+
+.icon-large:before {
+  padding-top: 10px !important;
+  font-size: 60px !important;
+}
