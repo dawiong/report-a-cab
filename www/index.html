@@ -20,11 +20,14 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="app/report/report.module.js"></script>
+    <script src="app/report/report.routes.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/app.routes.js"></script>
   </head>
-  <body ng-app="starter">
+  <body ng-app="app">
     <ion-pane>
-      <ion-nav-view></ion-nav-view>
+        <ion-nav-view name="main"></ion-nav-view>
     </ion-pane>
   </body>
 </html>
