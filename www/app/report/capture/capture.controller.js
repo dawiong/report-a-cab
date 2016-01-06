@@ -1,70 +1,36 @@
 (function() {
-'use strict';
+  'use strict';
 
-angular
+  angular
   .module('app.report')
   .controller('CaptureController', CaptureController);
 
-function CaptureController($cordovaCamera, $cordovaImagePicker) {
-  var vm = this;
+  function CaptureController($ionicScrollDelegate, imageService) {
+    var vm = this;
 
-  vm.openCamera = openCamera;
-  vm.openGallery = openGallery;
-  vm.hasPicture = false;
+    vm.openCamera = openCamera;
+    vm.openGallery = openGallery;
+    vm.hasPicture = false;
+    vm.message = 'No Image Selected';
 
-  activate();
-
-  function activate() {
-  }
-
-  function openGallery() {
-    var options = {
-      maximumImagesCount: 1,
-      width: 400,
-      height: 400,
-      quality: 80
-    };
-
-    ionic.Platform.ready(function() {
-      $cordovaImagePicker.getPictures(options)
-        .then(function (results) {
-          /*for (var i = 0; i < results.length; i++) {
-            console.log('Image URI: ' + results[i]);
-          }*/
-          var image = document.getElementById('myImage');
-          if(results[0]){
-            image.src = results[0];
-            vm.hasPicture = true;
-          }
-        }, function(error) {
-          // error getting photos
-        });
-      });
-  }
-
-  function openCamera() {
-    var options = {
-      quality: 80,
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: Camera.EncodingType.JPEG,
-      targetWidth: 400,
-      targetHeight: 400,
-      popoverOptions: CameraPopoverOptions,
-      saveToPhotoAlbum: false
-      //correctOrientation:true
-    };
-
-    ionic.Platform.ready(function() {
-      $cordovaCamera.getPicture(options).then(function(imageData) {
+    function openGallery() {
+      imageService.getGallery(300,300).then(function(imageSource) {
         var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
+        image.src = imageSource;
         vm.hasPicture = true;
-      }, function(err) {
-        // error
+      }, function(error) {
+        vm.message = error;
       });
-    });
+    }
+
+    function openCamera() {
+      imageService.getCamera(300,300).then(function(imageSource) {
+        var image = document.getElementById('myImage');
+        image.src = imageSource;
+        vm.hasPicture = true;
+      }, function(error) {
+        vm.message = error;
+      });
+    }
   }
-}
 })();

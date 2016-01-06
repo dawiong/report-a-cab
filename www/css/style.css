@@ -4,12 +4,12 @@
   font-size: 60px !important;
 }
 
-.image-block {
+.image-preview {
   display:block;
   width:100%;
   max-width:300px;
-  height:auto;
   max-height:300px;
+  height:auto;
 }
 
 .pull-right{

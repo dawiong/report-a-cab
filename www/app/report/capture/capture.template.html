@@ -7,9 +7,9 @@
   <div class="col col-80 col-offset-10">
     <div class="card">
       <div ng-if="!vm.hasPicture" class="padding-top text-center">
-        <p class="stable">No Image Selected</p>
+        <p ng-bind="vm.message" class="stable"></p>
       </div>
-      <img ng-show="vm.hasPicture" class="image-block" id="myImage" height="300" width="300" src=""/>
+      <img ng-show="vm.hasPicture" class="image-preview" id="myImage" height="300" width="300" src=""/>
     </div>
   </div>
 </div>
