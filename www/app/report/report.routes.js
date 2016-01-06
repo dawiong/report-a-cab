@@ -25,6 +25,14 @@
           controllerAs: 'vm'
         }
       }
+    })
+    .state('report.category', {
+      url: '',
+      views: {
+        content: {
+          templateUrl: 'app/report/category/category.template.html'
+        }
+      }
     });
   }
 })();
