@@ -1,10 +1,17 @@
 /* Empty. Add your own CSS if you like */
-.dark-content {
-  color: #fff;
-  background-color: #444;
-}
-
 .icon-large:before {
   padding-top: 10px !important;
   font-size: 60px !important;
+}
+
+.image-block {
+  display:block;
+  width:100%;
+  max-width:300px;
+  height:auto;
+  max-height:300px;
+}
+
+.pull-right{
+  float:right;
 }

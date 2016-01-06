@@ -3,16 +3,45 @@
     <h2 class="title"><small>Choose an Image Source</small></h2>
   </div>
 </div>
-<div class="row padding-top">
+<div class="row padding-bottom">
+  <div class="col col-80 col-offset-10">
+    <div class="card">
+      <div ng-if="!vm.hasPicture" class="padding-top text-center">
+        <p class="stable">No Image Selected</p>
+      </div>
+      <img ng-show="vm.hasPicture" class="image-block" id="myImage" height="300" width="300" src=""/>
+    </div>
+  </div>
+</div>
+<div ng-if="!vm.hasPicture" class="row">
   <div class="col col-60 col-offset-20">
-    <button class="button button-block button-energized">
+    <button class="button button-block button-energized" ng-click="vm.openCamera()">
       <i class="icon icon-large ion-camera"></i>
       <br />
       Take A Photo
     </button>
-    <button class="button button-block button-calm">
+    <button class="button button-block button-calm" ng-click="vm.openGallery()">
       <i class="icon ion-images"></i>
       Select from Gallery
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-80 col-offset-10">
+    <button class="button button-block button-assertive">
+      Proceed<i class="icon ion-arrow-right-a padding-left"></i>
+    </button>
+  </div>
+</div>
+<div ng-if="vm.hasPicture" class="row">
+  <div class="col col-60 col-offset-10">
+    <button class="button button-block button-energized" ng-click="vm.openCamera()">
+      <i class="icon ion-camera padding-right"></i>Retake Photo
+    </button>
+  </div>
+  <div class="col col-20">
+    <button class="button button-block button-calm" ng-click="vm.openGallery()">
+      <i class="icon ion-images"></i>
     </button>
   </div>
 </div>

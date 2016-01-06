@@ -20,7 +20,9 @@
       url: '',
       views: {
         content: {
-          templateUrl: 'app/report/capture/capture.template.html'
+          templateUrl: 'app/report/capture/capture.template.html',
+          controller: 'CaptureController',
+          controllerAs: 'vm'
         }
       }
     });
