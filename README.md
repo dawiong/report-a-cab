@@ -1,5 +1,15 @@
-# report-a-cab
-Report a cab app made using Ionic.
+# report-a-cab [WIP]
+Report a cab app made using Ionic. Just started fresh yet so functionalities are still incomplete.
+
+## Road Map
+1. Meteor Integration for backend purposes
+2. ES6 Upgrade
+  1. App Restructure for Bower components and Gulp tasks
+  2. Babel Integration
+3. Improve and check Readme
+4. Pan out App Features  
+...  
+*More to come!*  
 
 ## Installation
 
