@@ -3,45 +3,17 @@
     <h2 class="title"><small>Select Category</small></h2>
   </div>
 </div>
-<div class="row text-center">
+<div ng-repeat="category in vm.categories" class="row text-center" ng-if="($index)%2==0">
   <div class="col-50 padding">
     <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
       <i class="icon ion-sad"></i><br />
-      Rude
+      {{vm.categories[$index].title}}
     </button>
   </div>
   <div class="col-50 padding">
     <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
       <i class="icon ion-sad"></i><br />
-      Over-charging
-    </button>
-  </div>
-</div>
-<div class="row text-center">
-  <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
-      <i class="icon ion-sad"></i><br />
-      Smelly
-    </button>
-  </div>
-  <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
-      <i class="icon ion-sad"></i><br />
-      Slow
-    </button>
-  </div>
-</div>
-<div class="row text-center">
-  <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
-      <i class="icon ion-sad"></i><br />
-      Criminal Attempt
-    </button>
-  </div>
-  <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
-      <i class="icon ion-sad"></i><br />
-      Others
+      {{vm.categories[$index+1].title}}
     </button>
   </div>
 </div>

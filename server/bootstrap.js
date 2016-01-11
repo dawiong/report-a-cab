@@ -17,5 +17,38 @@ if (Meteor.isServer) {
         Reports.insert(reports[i]);
       }
     }
+
+    if(Categories.find().count() == 0){
+      var categories = [
+        {
+          id: 'REFUSED_BOARDING',
+          title: 'Refused Boarding'
+        },
+        {
+          id: 'CONTRACTING',
+          title: 'Contracting'
+        },
+        {
+          id: 'OVER_CHARGING',
+          title: 'Over-charging'
+        },
+        {
+          id: 'BAD_BEHAVIOR',
+          title: 'Rude Behavior'
+        },
+        {
+          id: 'SMELLY',
+          title: 'Smelly/Dirty'
+        },
+        {
+          id: 'NO_RECEIPT',
+          title: 'No Receipt'
+        }
+      ];
+
+      for (var i = 0; i < categories.length; i++) {
+        Categories.insert(categories[i]);
+      }
+    }
   });
 }
