@@ -15,16 +15,23 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/meteor-client-side/meteor-runtime-config.js"></script>
+    <script src="lib/meteor-client-side/dist/meteor-client-side.bundle.min.js"></script>
+    <!--<script src="lib/angular-meteor/dist/angular-meteor.bundle.js"></script>-->
+    <script src="lib/angular-meteor.bundle.hotfixed.js">
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="app/collections/collections.module.js"></script>
+    <script src="app/collections/reports.coll.service.js"></script>
     <script src="app/common/common.module.js"></script>
     <script src="app/common/image.service.js"></script>
     <script src="app/report/report.module.js"></script>
     <script src="app/report/report.routes.js"></script>
     <script src="app/report/capture/capture.controller.js"></script>
+    <script src="app/report/category/category.controller.js"></script>
     <script src="app/app.js"></script>
     <script src="app/app.routes.js"></script>
   </head>

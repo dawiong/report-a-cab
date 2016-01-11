@@ -21,8 +21,7 @@
       views: {
         content: {
           templateUrl: 'app/report/capture/capture.template.html',
-          controller: 'CaptureController',
-          controllerAs: 'vm'
+          controller: 'CaptureController as vm'
         }
       }
     })
@@ -30,7 +29,8 @@
       url: '',
       views: {
         content: {
-          templateUrl: 'app/report/category/category.template.html'
+          templateUrl: 'app/report/category/category.template.html',
+          controller: 'CategoryController as vm'
         }
       }
     });

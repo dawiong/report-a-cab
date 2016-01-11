@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('app.report', ['app.common']);
+    angular.module('app.report', ['app.common','app.collections']);
 })();
