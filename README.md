@@ -1,5 +1,5 @@
 # report-a-cab [WIP]
-Report a cab app made using Ionic. Just started fresh yet so functionalities are still incomplete.
+Report a cab app made using Ionic and Meteor. Just started fresh yet so functionalities are still incomplete.
 
 ## Road Map
 1. ~~Meteor Integration for backend purposes~~ -Done!
@@ -8,6 +8,8 @@ Report a cab app made using Ionic. Just started fresh yet so functionalities are
   2. Babel Integration
 3. Improve and check Readme
 4. Pan out App Features  
+5. Production configurations
+6. Authentication and Security
 ...  
 *More to come!*  
 
@@ -25,3 +27,4 @@ Report a cab app made using Ionic. Just started fresh yet so functionalities are
 
 1. Run `ionic serve` to run the app in a browser
 2. On a separate terminal, navigate to the `server` folder, and run `meteor` to start the backend server. Optionally, run `meteor mongo` on a separate terminal, to check the collection store.
+3. [Requires android development tools to be installed, refer to [Ionic Installation Guide] (http://ionicframework.com/docs/guide/installation.html)] `ionic emulate android` to run Android emulator, or `ionic run android` to run in phone
