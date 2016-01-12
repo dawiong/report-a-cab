@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col text-center">
+    <h2 class="title"><small>Report Details</small></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="list text-center">
+      <label class="item item-input item-dark">
+        <input class="text-center" ng-model="vm.reportBody.plate_number" type="text" placeholder="Plate Number">
+      </label>
+      <div class="item item-divider item-dark text-center">
+        <small class="stable"><i class="icon ion-plus"></i>&nbsp;Add More Details</small>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="button button-block button-balanced" ng-click="vm.submit()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

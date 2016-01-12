@@ -11,13 +11,10 @@
     service.reports = new Mongo.Collection('reports');
     service.submitReport = submitReport;
 
-    function submitReport() {
+    function submitReport(reportBody) {
       var deferred = $q.defer();
 
-      var reportId = service.reports.insert({
-        title:'Test Insert ' + (new Date()).toString(),
-        reporter:'Dawi'
-      });
+      var reportId = service.reports.insert(reportBody);
       if(reportId){
         deferred.resolve(reportId);
       }else{

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div ng-class="'item item-divider ' + (vm.messageType == 'error' ? 'item-assertive' : 'item-balanced')">
+        {{vm.messageType == 'error' ? 'Error!' : 'Success!'}}
+      </div>
+      <div class="item item-dark item-text-wrap">
+        {{vm.message}}
+      </div>
+    </div>
+  </div>
+</div>

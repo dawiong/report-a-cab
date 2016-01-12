@@ -21,9 +21,8 @@
           sourceType: Camera.PictureSourceType.CAMERA,
           allowEdit: false,
           encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 400,
-          targetHeight: 400,
-          popoverOptions: CameraPopoverOptions,
+          targetWidth: 720,
+          targetHeight: 720,
           saveToPhotoAlbum: false,
           correctOrientation:true
         };
@@ -48,6 +47,7 @@
     function getGallery(targetWidth, targetHeight){
       var deferred = $q.defer();
 
+      /*
       ionic.Platform.ready(function() {
         var options = {
           maximumImagesCount: 1,
@@ -71,7 +71,34 @@
         function(err){
           deferred.reject("ERROR: Cannot open gallery.");
         });
+      });*/
+
+      ionic.Platform.ready(function() {
+        var options = {
+          quality: 80,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 720,
+          targetHeight: 720,
+          saveToPhotoAlbum: false,
+          correctOrientation:true
+        };
+
+        if(targetWidth && targetHeight){
+          options.targetWidth = targetWidth;
+          options.targetHeight = targetHeight;
+        }
+
+        $cordovaCamera.getPicture(options).then(function(imageData){
+          deferred.resolve("data:image/jpeg;base64," + imageData);
+        },
+        function(err){
+          deferred.reject("ERROR: Cannot open gallery.");
+        });
       });
+
       return deferred.promise;
     }
 

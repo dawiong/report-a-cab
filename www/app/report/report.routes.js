@@ -33,6 +33,28 @@
           controller: 'CategoryController as vm'
         }
       }
+    })
+    .state('report.details', {
+      url: '',
+      views: {
+        content: {
+          templateUrl: 'app/report/details/details.template.html',
+          controller: 'DetailsController as vm'
+        }
+      }
+    })
+    .state('report.results', {
+      url: '',
+      params:{
+         messageType: 'error',
+         message: 'Action Failed.'
+      },
+      views: {
+        content: {
+          templateUrl: 'app/report/results/results.template.html',
+          controller: 'ResultsController as vm'
+        }
+      }
     });
   }
 })();

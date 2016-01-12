@@ -5,13 +5,13 @@
 </div>
 <div ng-repeat="category in vm.categories" class="row text-center" ng-if="($index)%2==0">
   <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
+    <button class="button button-xl button-round button-assertive" ui-sref="report.details" ng-click="vm.setCategory(vm.categories[$index].id)">
       <i class="icon ion-sad"></i><br />
       {{vm.categories[$index].title}}
     </button>
   </div>
   <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.submitReport()">
+    <button class="button button-xl button-round button-assertive" ui-sref="report.details" ng-click="vm.setCategory(vm.categories[$index+1].id)">
       <i class="icon ion-sad"></i><br />
       {{vm.categories[$index+1].title}}
     </button>

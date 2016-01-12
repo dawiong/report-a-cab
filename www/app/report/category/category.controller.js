@@ -5,11 +5,11 @@
   .module('app.report')
   .controller('CategoryController', CategoryController);
 
-  function CategoryController(reportsCollService, categoriesCollService) {
+  function CategoryController(categoriesCollService, reportService) {
     var vm = this;
 
     vm.categories = {};
-    vm.submitReport = submitReport;
+    vm.setCategory = setCategory;
 
     init();
 
@@ -17,12 +17,8 @@
       loadCategories();
     }
 
-    function submitReport() {
-      reportsCollService.submitReport().then(function(response){
-        console.log("Test Submit: " + response);
-      }, function(err){
-        console.log("Test Submit: " + err);
-      });
+    function setCategory(categoryId){
+      reportService.reportBody.category_id = categoryId;
     }
 
     function loadCategories() {
