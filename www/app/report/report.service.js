@@ -5,7 +5,7 @@
   .module('app.report')
   .service('reportService', reportService);
 
-  function reportService($q, reportsCollService) {
+  function reportService($q, reportsApiService) {
     var service = this;
 
     service.reportBody = {
@@ -23,7 +23,7 @@
     function submitReport() {
       var deferred = $q.defer();
 
-      reportsCollService.submitReport(service.reportBody).then(function(response){
+      reportsApiService.submitReport(service.reportBody).then(function(response){
         console.log("Submit Success! ~" + response);
         deferred.resolve(response);
       }, function(err){
