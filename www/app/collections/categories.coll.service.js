@@ -8,20 +8,38 @@
   function categoriesCollService($q) {
     var service = this;
 
-    service.categories = new Mongo.Collection('categories');
     service.getCategories = getCategories;
 
-    function getCategories() {
-      var deferred = $q.defer();
-
-      var categories = service.categories.find().fetch();
-      if(categories){
-        deferred.resolve(categories);
-      }else{
-        deferred.reject("Error: Unable to collect categories");
+    //static listing
+    service.categories = [
+      {
+        code: 'REFUSED_BOARDING',
+        title: 'Refused Boarding'
+      },
+      {
+        code: 'CONTRACTING',
+        title: 'Contracting'
+      },
+      {
+        code: 'OVER_CHARGING',
+        title: 'Over-charging'
+      },
+      {
+        code: 'BAD_BEHAVIOR',
+        title: 'Rude Behavior'
+      },
+      {
+        code: 'METER_PROBLEM',
+        title: 'Defective Meter'
+      },
+      {
+        code: 'RECKLESS_DRIVING',
+        title: 'Reckless Driving'
       }
+    ];
 
-      return deferred.promise;
+    function getCategories() {
+      return service.categories;
     }
   }
 })();

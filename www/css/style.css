@@ -1,4 +1,12 @@
 /* Empty. Add your own CSS if you like */
+textarea {
+  resize: none;
+  border: none !important;
+  padding-left: 0px !important;
+  font-size: 14px !important;
+  line-height: 160% !important;
+}
+
 .icon-large:before {
   padding-top: 10px !important;
   font-size: 60px !important;
@@ -27,4 +35,8 @@
   height:120px;
   line-height:16px;
   overflow: hidden;
+}
+
+.dark-text {
+  color: #b3b3b3 !important;
 }

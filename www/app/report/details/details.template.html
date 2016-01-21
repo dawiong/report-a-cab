@@ -5,17 +5,58 @@
 </div>
 <div class="row">
   <div class="col">
-    <div class="list text-center">
-      <label class="item item-input item-dark">
-        <input class="text-center" ng-model="vm.reportBody.plate_number" type="text" placeholder="Plate Number">
+    <div>
+      <small class="stable">Taxi Information</small>
+    </div>
+    <div class="list">
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Plate Number</span>
+        <input type="text" ng-model="vm.reportBody.plate_number" placeholder="Plate Number" />
       </label>
-      <div class="item item-divider item-dark text-center">
-        <small class="stable"><i class="icon ion-plus"></i>&nbsp;Add More Details</small>
-      </div>
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Operator Name</span>
+        <input type="text" ng-model="vm.reportBody.operator_name" placeholder="Operator Name" />
+      </label>
+    </div>
+    <div>
+      <small class="stable">Report Body</small>
+    </div>
+    <div class="list">
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Title</span>
+        <input type="text" ng-model="vm.reportBody.title" placeholder="Title" />
+      </label>
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Description</span>
+        <textarea class="item item-input item-dark" rows="1" msd-elastic ng-model="vm.reportBody.description" placeholder="Description">
+        </textarea>
+      </label>
+    </div>
+    <div>
+      <small class="stable">Contact Details (for correspondence with LTFRB)</small>
+    </div>
+    <div class="list">
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Name</span>
+        <input type="text" ng-model="vm.reportBody.name" placeholder="Name" />
+      </label>
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="email" ng-model="vm.reportBody.email" placeholder="Email" />
+
+      </label>
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Contact Number</span>
+        <input type="tel" ng-model="vm.reportBody.contactNumber" placeholder="Contact Number" />
+      </label>
+      <label class="item item-input item-dark item-floating-label">
+        <span class="input-label">Mailing Address</span>
+        <input type="text" ng-model="vm.reportBody.address" placeholder="Address" />
+      </label>
     </div>
     <div class="text-center">
       <button class="button button-block button-balanced" ng-click="vm.submit()">
-        Submit
+        Save
       </button>
     </div>
   </div>

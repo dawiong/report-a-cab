@@ -13,13 +13,17 @@
     function submitReport(reportBody) {
       var deferred = $q.defer();
 
-      Meteor.call('newReport', reportBody, function(error, result){
-        if(error){
-          deferred.reject("Error: Unable to collect report");
-        }else{
-          deferred.resolve(result);
-        }
-      });
+      if(Meteor.status().connected){
+        Meteor.call('newReport', reportBody, function(error, result){
+          if(error){
+            deferred.reject("Application Error: Unable to collect report. Please send a bug report.");
+          }else{
+            deferred.resolve(result);
+          }
+        });
+      }else{
+        deferred.reject("Error: Unable to connect to server. Please check your connection.");
+      }
       return deferred.promise;
     }
   }

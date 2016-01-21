@@ -10,7 +10,7 @@
 
     service.reportBody = {
       reported_by: 'user',
-      category_id: '',
+      category_code: '',
       images: [],
       plate_number: '',
       operator_name: '',
@@ -22,13 +22,13 @@
 
     function submitReport() {
       var deferred = $q.defer();
-
+      var message = '';
       reportsApiService.submitReport(service.reportBody).then(function(response){
-        console.log("Submit Success! ~" + response);
-        deferred.resolve(response);
+        message = "Your report has been recorded successfully.";
+        deferred.resolve(message);
       }, function(err){
-        console.log("Submit Fail: " + err);
-        deferred.reject(err);
+        message = err;
+        deferred.reject(message);
       });
 
       return deferred.promise;

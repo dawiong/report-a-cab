@@ -5,7 +5,7 @@
   .module('app.report')
   .controller('CategoryController', CategoryController);
 
-  function CategoryController(categoriesCollService, reportService) {
+  function CategoryController($state, categoriesCollService, reportService) {
     var vm = this;
 
     vm.categories = {};
@@ -17,16 +17,17 @@
       loadCategories();
     }
 
-    function setCategory(categoryId){
-      reportService.reportBody.category_id = categoryId;
+    function setCategory(categoryCode){
+      reportService.reportBody.category_code = categoryCode;
+      reportService.submitReport().then(function(response){
+        $state.go("report.results",{messageType:'success', message:response});
+      },function(err){
+        $state.go("report.results",{messageType:'error', message:err});
+      });
     }
 
     function loadCategories() {
-      categoriesCollService.getCategories().then(function(response){
-        vm.categories = response;
-      }, function(err){
-        console.log("Categories Loading Error: " + err);
-      });
+      vm.categories = categoriesCollService.getCategories();
     }
   }
 })();
