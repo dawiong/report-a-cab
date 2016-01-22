@@ -15,7 +15,11 @@
       plate_number: '',
       operator_name: '',
       title: '',
-      description: ''
+      description: '',
+      name: '',
+      email: '',
+      contact_number: '',
+      address: ''
     };
 
     service.submitReport = submitReport;
