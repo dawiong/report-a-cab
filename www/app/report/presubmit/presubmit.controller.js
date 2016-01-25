@@ -3,17 +3,16 @@
 
   angular
   .module('app.report')
-  .controller('DetailsController', DetailsController);
+  .controller('PreSubmitController', PreSubmitController);
 
-  function DetailsController($state, reportService) {
+  function PreSubmitController($state, reportService) {
     var vm = this;
 
-    vm.reportBody = reportService.reportBody;
     vm.submit = submit;
 
     function submit() {
       reportService.submitReport().then(function(response){
-        $state.go("report.results",{messageType:'update-success', message:'Your report has been updated. We will email you for any updates on your request.'});
+        $state.go("report.results",{messageType:'success', message:response});
       },function(err){
         $state.go("report.results",{messageType:'error', message:'Unable to submit your report. Please try again later.'});
       });

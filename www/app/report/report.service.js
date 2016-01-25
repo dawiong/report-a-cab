@@ -8,21 +8,33 @@
   function reportService($q, reportsApiService) {
     var service = this;
 
-    service.reportBody = {
-      reported_by: 'user',
-      category_code: '',
-      images: [],
-      plate_number: '',
-      operator_name: '',
-      title: '',
-      description: '',
-      name: '',
-      email: '',
-      contact_number: '',
-      address: ''
-    };
-
+    service.reportBody = {};
     service.submitReport = submitReport;
+    service.reset = reset;
+
+    init();
+
+    function init(){
+      reset();
+    }
+
+    function reset(){
+      var reportTemplate = {
+        reported_by: 'app',
+        category_code: '',
+        images: [],
+        plate_number: '',
+        operator_name: '',
+        title: '',
+        description: '',
+        name: '',
+        email: '',
+        contact_number: '',
+        address: ''
+      };
+
+      angular.copy(reportTemplate, service.reportBody);
+    }
 
     function submitReport() {
       var deferred = $q.defer();

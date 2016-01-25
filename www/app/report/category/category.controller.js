@@ -10,6 +10,7 @@
 
     vm.categories = {};
     vm.setCategory = setCategory;
+    vm.reportBody = reportService.reportBody;
 
     init();
 
@@ -18,12 +19,7 @@
     }
 
     function setCategory(categoryCode){
-      reportService.reportBody.category_code = categoryCode;
-      reportService.submitReport().then(function(response){
-        $state.go("report.results",{messageType:'success', message:response});
-      },function(err){
-        $state.go("report.results",{messageType:'error', message:err});
-      });
+      vm.reportBody.category_code = categoryCode;
     }
 
     function loadCategories() {

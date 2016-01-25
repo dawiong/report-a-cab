@@ -7,17 +7,9 @@
       <div class="item item-dark item-text-wrap">
         <p class="dark-text">{{vm.message}}</p>
       </div>
-      <div ng-if="vm.messageType == 'success'">
-        <div class="item item-dark item-text-wrap">
-          <p class="dark-text">To improve handling and receive updates from this request, you may add additional details by pressing the link below.</p>
-        </div>
-        <div class="item item-divider item-dark text-center">
-          <button class="button button-clear button-calm button-small" ui-sref="report.details"><i class="icon ion-plus"></i>&nbsp;Add More Details</button>
-        </div>
-      </div>
     </div>
     <div class="text-center">
-      <button class="button button-block button-balanced" ng-click="vm.submit()">
+      <button class="button button-block button-balanced" ng-click="vm.finish()">
         Finish
       </button>
     </div>

@@ -5,15 +5,22 @@
 </div>
 <div ng-repeat="category in vm.categories" class="row text-center" ng-if="($index)%2==0">
   <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.setCategory(vm.categories[$index].code)">
+    <button ng-class="'button button-xl button-round button-calm ' + (vm.categories[$index].code == vm.reportBody.category_code ? 'active' : '')" ng-click="vm.setCategory(vm.categories[$index].code)">
       <i class="icon ion-sad"></i><br />
       {{vm.categories[$index].title}}
     </button>
   </div>
   <div class="col-50 padding">
-    <button class="button button-xl button-round button-assertive" ng-click="vm.setCategory(vm.categories[$index+1].code)">
+    <button ng-class="'button button-xl button-round button-calm ' + (vm.categories[$index+1].code == vm.reportBody.category_code ? 'active' : '')" ng-click="vm.setCategory(vm.categories[$index+1].code)">
       <i class="icon ion-sad"></i><br />
       {{vm.categories[$index+1].title}}
+    </button>
+  </div>
+</div>
+<div ng-if="vm.reportBody.category_code" class="row">
+  <div class="col col-80 col-offset-10">
+    <button class="button button-block button-assertive" ui-sref="report.presubmit">
+      Proceed<i class="icon ion-arrow-right-a padding-left"></i>
     </button>
   </div>
 </div>

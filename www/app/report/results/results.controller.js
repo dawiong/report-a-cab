@@ -5,13 +5,17 @@
   .module('app.report')
   .controller('ResultsController', ResultsController);
 
-  function ResultsController($stateParams) {
+  function ResultsController($state, $stateParams, reportService) {
     var vm = this;
 
-console.log($stateParams);
     vm.messageType = $stateParams.messageType;
     vm.message = $stateParams.message;
-    console.log(vm.messageType);
-    console.log(vm.message);
+
+    vm.finish = finish;
+
+    function finish(){
+      reportService.reset();
+      $state.go("report.capture");
+    }
   }
 })();

@@ -43,6 +43,15 @@
         }
       }
     })
+    .state('report.presubmit', {
+      url: '',
+      views: {
+        content: {
+          templateUrl: 'app/report/presubmit/presubmit.template.html',
+          controller: 'PreSubmitController as vm'
+        }
+      }
+    })
     .state('report.results', {
       url: '',
       params:{
