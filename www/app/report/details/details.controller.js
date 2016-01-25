@@ -13,7 +13,7 @@
 
     function submit() {
       reportService.submitReport().then(function(response){
-        $state.go("report.results",{messageType:'update-success', message:'Your report has been updated. We will email you for any updates on your request.'});
+        $state.go("report.results",{messageType:'update-success', message:response});
       },function(err){
         $state.go("report.results",{messageType:'error', message:'Unable to submit your report. Please try again later.'});
       });
