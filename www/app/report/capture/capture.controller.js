@@ -16,8 +16,7 @@
 
     function openGallery() {
       //for testing on desktop, assume has picture already
-      //if (window.cordova) {
-      if(false){
+      if (window.cordova) {
         // running on device/emulator
         imageService.getGallery().then(function(imageSource) {
           vm.reportBody.images.push(imageSource);
