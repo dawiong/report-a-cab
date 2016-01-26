@@ -5,7 +5,7 @@
   .module('app.report')
   .controller('ResultsController', ResultsController);
 
-  function ResultsController($state, $stateParams, reportService) {
+  function ResultsController($state, $stateParams, $ionicHistory, reportService) {
     var vm = this;
 
     vm.messageType = $stateParams.messageType;
@@ -15,6 +15,9 @@
 
     function finish(){
       reportService.reset();
+      $ionicHistory.nextViewOptions({
+        disableBack: true
+      });
       $state.go("report.capture");
     }
   }

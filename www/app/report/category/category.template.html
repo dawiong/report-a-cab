@@ -1,26 +1,25 @@
-<div class="row">
-  <div class="col text-center">
-    <h2 class="title"><small>Select Category</small></h2>
-  </div>
-</div>
-<div ng-repeat="category in vm.categories" class="row text-center" ng-if="($index)%2==0">
-  <div class="col-50 padding">
-    <button ng-class="'button button-xl button-round button-calm ' + (vm.categories[$index].code == vm.reportBody.category_code ? 'active' : '')" ng-click="vm.setCategory(vm.categories[$index].code)">
-      <i class="icon ion-sad"></i><br />
-      {{vm.categories[$index].title}}
-    </button>
-  </div>
-  <div class="col-50 padding">
-    <button ng-class="'button button-xl button-round button-calm ' + (vm.categories[$index+1].code == vm.reportBody.category_code ? 'active' : '')" ng-click="vm.setCategory(vm.categories[$index+1].code)">
-      <i class="icon ion-sad"></i><br />
-      {{vm.categories[$index+1].title}}
-    </button>
-  </div>
-</div>
-<div ng-if="vm.reportBody.category_code" class="row">
-  <div class="col col-80 col-offset-10">
-    <button class="button button-block button-assertive" ui-sref="report.presubmit">
-      Proceed<i class="icon ion-arrow-right-a padding-left"></i>
-    </button>
-  </div>
-</div>
+<ion-view view-title="Select Category">
+  <ion-content class="has-header">
+    <div ng-repeat="category in vm.categories" class="row text-center" ng-if="($index)%2==0">
+      <div class="col-50 padding">
+        <button ng-class="'button button-xl button-round button-calm ' + (vm.categories[$index].code == vm.reportBody.category_code ? 'active' : '')" ng-click="vm.setCategory(vm.categories[$index].code)">
+          <i class="icon ion-sad"></i><br />
+          {{vm.categories[$index].title}}
+        </button>
+      </div>
+      <div class="col-50 padding">
+        <button ng-class="'button button-xl button-round button-calm ' + (vm.categories[$index+1].code == vm.reportBody.category_code ? 'active' : '')" ng-click="vm.setCategory(vm.categories[$index+1].code)">
+          <i class="icon ion-sad"></i><br />
+          {{vm.categories[$index+1].title}}
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        <button class="button button-block button-assertive" ui-sref="report.presubmit" ng-disabled="!vm.reportBody.category_code">
+          Proceed<i class="icon ion-arrow-right-a padding-left"></i>
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
